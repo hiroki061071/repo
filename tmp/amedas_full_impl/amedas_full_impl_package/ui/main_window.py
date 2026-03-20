@@ -409,6 +409,7 @@ class MainWindow(QMainWindow):
                 self.period.currentText(),
                 self.stat.currentText(),
                 self.result,
+                self.event_df,
             )
             ReportPreviewDialog(path, self).exec()
         except Exception as e:
