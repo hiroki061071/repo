@@ -1,0 +1,22 @@
+2026-03-18 23:16:23,268 [INFO] main - CSV読込成功 file=C:/Users/hirok/OneDrive/デスクトップ/amedas_full_impl_package/sample/sample_jma_sunshine.csv rows=12
+2026-03-18 23:16:42,898 [INFO] main - 集計完了 station=旭川 period=月別 stat=最大値 rows=1
+2026-03-18 23:22:43,001 [INFO] main - 集計完了 station=東京 period=年別 stat=最大値 rows=1
+2026-03-18 23:22:46,380 [INFO] main - 集計完了 station=東京 period=季節別 stat=最大値 rows=1
+2026-03-18 23:27:03,634 [INFO] main - CSV読込成功 file=C:/Users/hirok/OneDrive/デスクトップ/amedas_full_impl_package/sample/sample_jma_sunshine.csv rows=12
+2026-03-18 23:27:07,161 [INFO] main - 集計完了 station=旭川 period=月別 stat=最大値 rows=1
+2026-03-20 00:34:30,332 [INFO] main - CSV読込成功 file=C:/tmp/amedas_full_impl/amedas_full_impl_package/sample/sample_jma_sunshine.csv rows=12
+2026-03-20 00:34:33,507 [INFO] main - 集計完了 station=旭川 period=月別 stat=最大値 rows=1
+2026-03-20 01:01:07,320 [INFO] main - CSV読込成功 file=C:/tmp/amedas_full_impl/amedas_full_impl_package/sample/sample_jma_sunshine.csv rows=12
+2026-03-20 01:01:11,540 [INFO] main - 集計完了 station=旭川 period=月別 stat=最大値 rows=1
+2026-03-20 01:24:04,627 [INFO] main - CSV読込成功 file=C:/tmp/amedas_full_impl/amedas_full_impl_package/sample/samplesample_jma_sunshine_3months.csv rows=90
+2026-03-20 01:24:05,855 [INFO] main - 集計完了 station=旭川 period=月別 stat=最大値 rows=3
+2026-03-20 01:27:16,442 [INFO] main - CSV読込成功 file=C:/tmp/amedas_full_impl/amedas_full_impl_package/sample/samplesample_jma_sunshine_3months.csv rows=90
+2026-03-20 01:27:18,828 [INFO] main - 集計完了 station=旭川 period=月別 stat=最大値 rows=3
+2026-03-20 01:30:02,818 [INFO] main - CSV読込成功 file=C:/tmp/amedas_full_impl/amedas_full_impl_package/sample/samplesample_jma_sunshine_3months.csv rows=90
+2026-03-20 01:30:08,041 [INFO] main - 集計完了 station=旭川 period=月別 stat=最大値 rows=3
+2026-03-20 01:32:18,050 [INFO] main - CSV読込成功 file=C:/tmp/amedas_full_impl/amedas_full_impl_package/sample/samplesample_jma_sunshine_3months.csv rows=90
+2026-03-20 01:32:19,745 [INFO] main - 集計完了 station=旭川 period=月別 stat=最大値 rows=3
+2026-03-20 01:44:22,319 [INFO] main - CSV読込成功 file=C:/tmp/amedas_full_impl/amedas_full_impl_package/sample/samplesample_jma_sunshine_3months.csv rows=90
+2026-03-20 01:44:24,860 [INFO] main - 集計完了 station=旭川 period=月別 stat=最大値 rows=3
+2026-03-20 11:29:42,345 [INFO] main - CSV読込成功 file=C:/tmp/amedas_full_impl/amedas_full_impl_package/sample/samplesample_jma_sunshine_3months.csv rows=90
+2026-03-20 11:29:44,312 [INFO] main - 集計完了 station=旭川 period=月別 stat=最大値 rows=3 events=17
