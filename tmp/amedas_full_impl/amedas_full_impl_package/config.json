@@ -1,0 +1,10 @@
+{
+  "input_dir": "input",
+  "output_dir": "output",
+  "log_dir": "logs",
+  "report_dir": "output",
+  "default_period": "月別",
+  "default_stat": "最大値",
+  "default_encoding": "utf-8-sig",
+  "default_prefecture": ""
+}
