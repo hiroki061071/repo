@@ -193,9 +193,3 @@ def run_nationwide(
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     summary.to_csv(Path(output_dir) / "nationwide_summary.csv", index=False, encoding="utf-8-sig")
     return summary
-        rows.append({"station_name": station, "output_file": str(out_path), "result_rows": len(result)})
-
-    summary = pd.DataFrame(rows)
-    Path(output_dir).mkdir(parents=True, exist_ok=True)
-    summary.to_csv(Path(output_dir) / "nationwide_summary.csv", index=False, encoding="utf-8-sig")
-    return summary
