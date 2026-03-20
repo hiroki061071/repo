@@ -1,7 +1,20 @@
 from __future__ import annotations
+
 import pandas as pd
-from PySide6.QtWidgets import QDialog, QFileDialog, QHBoxLayout, QLabel, QMessageBox, QPushButton, QTableWidget, QTableWidgetItem, QVBoxLayout
+from PySide6.QtWidgets import (
+    QDialog,
+    QFileDialog,
+    QHBoxLayout,
+    QLabel,
+    QMessageBox,
+    QPushButton,
+    QTableWidget,
+    QTableWidgetItem,
+    QVBoxLayout,
+)
+
 from core.batch import run_batch
+
 
 class BatchWindow(QDialog):
     def __init__(self, source_df, parent=None):
@@ -12,12 +25,15 @@ class BatchWindow(QDialog):
         self.settings_path = None
 
         layout = QVBoxLayout(self)
+
         top = QHBoxLayout()
         self.path_label = QLabel("設定CSV未選択")
         select_btn = QPushButton("設定CSV選択")
         run_btn = QPushButton("実行")
+
         select_btn.clicked.connect(self.select_file)
         run_btn.clicked.connect(self.run_batch_job)
+
         top.addWidget(self.path_label)
         top.addWidget(select_btn)
         top.addWidget(run_btn)
@@ -26,24 +42,56 @@ class BatchWindow(QDialog):
         self.table = QTableWidget()
         layout.addWidget(self.table)
 
+    def _show_df(self, df: pd.DataFrame):
+        self.table.clear()
+        self.table.setRowCount(len(df))
+        self.table.setColumnCount(len(df.columns))
+        self.table.setHorizontalHeaderLabels([str(c) for c in df.columns])
+
+        for i, row in df.iterrows():
+            for j, v in enumerate(row):
+                self.table.setItem(i, j, QTableWidgetItem(str(v)))
+
+        self.table.resizeColumnsToContents()
+
     def select_file(self):
         path, _ = QFileDialog.getOpenFileName(self, "設定CSV選択", "sample", "CSV (*.csv)")
         if not path:
             return
+
         self.settings_path = path
         self.path_label.setText(path)
 
-        df = pd.read_csv(path, encoding="utf-8-sig")
-        self.table.setRowCount(len(df))
-        self.table.setColumnCount(len(df.columns))
-        self.table.setHorizontalHeaderLabels([str(c) for c in df.columns])
-        for i, row in df.iterrows():
-            for j, v in enumerate(row):
-                self.table.setItem(i, j, QTableWidgetItem(str(v)))
+        try:
+            df = pd.read_csv(path, encoding="utf-8-sig")
+            self._show_df(df)
+
+            required_candidates = {"地点名", "集計単位", "統計値", "開始日", "終了日"}
+            actual = {str(c).strip() for c in df.columns}
+
+            if len(required_candidates & actual) < 3:
+                QMessageBox.warning(
+                    self,
+                    "警告",
+                    "このCSVは一括処理の設定CSVではない可能性があります。\n"
+                    "設定CSVには「地点名・集計単位・統計値・開始日・終了日」が必要です。"
+                )
+
+        except Exception as e:
+            QMessageBox.critical(self, "エラー", f"設定CSV読込に失敗しました。\n{e}")
 
     def run_batch_job(self):
         if self.source_df is None or self.settings_path is None:
             QMessageBox.warning(self, "警告", "元データまたは設定CSVがありません。")
             return
-        summary = run_batch(self.source_df, self.settings_path, "output")
-        QMessageBox.information(self, "完了", f"一括処理が完了しました。件数: {len(summary)}")
+
+        try:
+            summary = run_batch(self.source_df, self.settings_path, "output")
+            self._show_df(summary)
+            QMessageBox.information(
+                self,
+                "完了",
+                f"一括処理が完了しました。\n件数: {len(summary)}\n出力: output/batch_summary.csv",
+            )
+        except Exception as e:
+            QMessageBox.critical(self, "エラー", f"一括処理に失敗しました。\n{e}")
