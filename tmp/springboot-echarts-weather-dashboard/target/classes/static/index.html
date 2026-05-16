@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot + ECharts 気象ダッシュボード</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@6/dist/echarts.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>気象ダッシュボード</h1>
+        <p>Spring Boot + JSON + ECharts で作る週間予報ビューア</p>
+    </header>
+
+    <section class="controls">
+        <div class="row">
+            <label for="preset">地点プリセット</label>
+            <select id="preset">
+                <option value="37.9162,139.0364,新潟">新潟</option>
+                <option value="35.6762,139.6503,東京">東京</option>
+                <option value="34.6937,135.5023,大阪">大阪</option>
+                <option value="43.0618,141.3545,札幌">札幌</option>
+                <option value="26.2124,127.6809,那覇">那覇</option>
+            </select>
+        </div>
+
+        <div class="row split">
+            <div><label for="lat">緯度</label><input id="lat" type="number" step="0.0001" value="37.9162"></div>
+            <div><label for="lon">経度</label><input id="lon" type="number" step="0.0001" value="139.0364"></div>
+            <div><label for="timezone">タイムゾーン</label><input id="timezone" type="text" value="Asia/Tokyo"></div>
+        </div>
+
+        <div class="row"><button id="loadBtn">予報を取得</button></div>
+    </section>
+
+    <section class="summary-card">
+        <h2 id="locationTitle">新潟</h2>
+        <p id="metaText">7日予報を表示します。</p>
+    </section>
+
+    <section class="charts">
+        <div id="tempChart" class="chart"></div>
+        <div id="precipChart" class="chart"></div>
+        <div id="windChart" class="chart"></div>
+    </section>
+
+    <section class="table-section">
+        <h3>日別予報一覧</h3>
+        <table id="forecastTable">
+        <thead>
+            <tr>
+                <th>日付</th>
+                <th>天気</th>
+                <th>最高気温</th>
+                <th>最低気温</th>
+                <th>降水確率</th>
+                <th>最大風速</th>
+                <th>天気コード</th>
+            </tr>
+        </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+</div>
+<script src="/app.js?v=20260516_2"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+C:\tmp\springboot-echarts-weather-dashboard\src\main\java\com\hiroki\weatherdashboard\controller\ForecastController.java
+C:\tmp\springboot-echarts-weather-dashboard\src\main\java\com\hiroki\weatherdashboard\dto\ForecastDay.java
+C:\tmp\springboot-echarts-weather-dashboard\src\main\java\com\hiroki\weatherdashboard\dto\ForecastResponse.java
+C:\tmp\springboot-echarts-weather-dashboard\src\main\java\com\hiroki\weatherdashboard\dto\OpenMeteoApiResponse.java
+C:\tmp\springboot-echarts-weather-dashboard\src\main\java\com\hiroki\weatherdashboard\service\OpenMeteoForecastService.java
+C:\tmp\springboot-echarts-weather-dashboard\src\main\java\com\hiroki\weatherdashboard\WeatherDashboardApplication.java
