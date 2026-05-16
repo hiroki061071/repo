@@ -23,7 +23,23 @@
                 <option value="34.6937,135.5023,大阪">大阪</option>
                 <option value="43.0618,141.3545,札幌">札幌</option>
                 <option value="26.2124,127.6809,那覇">那覇</option>
+                <option value="33.5902,130.4017,福岡">福岡</option>
+                <option value="38.2682,140.8694,仙台">仙台</option>
+                <option value="34.3853,132.4553,広島">広島</option>
+                <option value="35.1815,136.9066,名古屋">名古屋</option>
+                <option value="43.7706,142.3650,旭川">旭川</option>
             </select>
+        </div>
+
+        <div class="row split">
+            <div>
+                <label for="searchKeyword">地点検索</label>
+                <input id="searchKeyword" type="text" placeholder="例: 鹿児島, 京都, Yokohama">
+            </div>
+            <div class="search-button-wrap">
+                <label>&nbsp;</label>
+                <button id="searchBtn" type="button">検索候補を反映</button>
+            </div>
         </div>
 
         <div class="row split">
@@ -32,12 +48,15 @@
             <div><label for="timezone">タイムゾーン</label><input id="timezone" type="text" value="Asia/Tokyo"></div>
         </div>
 
-        <div class="row"><button id="loadBtn">予報を取得</button></div>
+        <div class="row">
+            <button id="loadBtn">予報を取得</button>
+        </div>
     </section>
 
     <section class="summary-card">
         <h2 id="locationTitle">新潟</h2>
         <p id="metaText">7日予報を表示します。</p>
+        <p id="fetchedAtText">取得時刻: -</p>
     </section>
 
     <section class="charts">
@@ -49,7 +68,7 @@
     <section class="table-section">
         <h3>日別予報一覧</h3>
         <table id="forecastTable">
-        <thead>
+            <thead>
             <tr>
                 <th>日付</th>
                 <th>天気</th>
@@ -59,11 +78,12 @@
                 <th>最大風速</th>
                 <th>天気コード</th>
             </tr>
-        </thead>
+            </thead>
             <tbody></tbody>
         </table>
     </section>
 </div>
-<script src="/app.js?v=20260516_2"></script>
+
+<script src="/app.js?v=20260517_1"></script>
 </body>
 </html>
