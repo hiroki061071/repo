@@ -1,7 +1,0 @@
-com\hiroki\weatherdashboard\dto\OpenMeteoApiResponse.class
-com\hiroki\weatherdashboard\WeatherDashboardApplication.class
-com\hiroki\weatherdashboard\dto\ForecastDay.class
-com\hiroki\weatherdashboard\controller\ForecastController.class
-com\hiroki\weatherdashboard\dto\ForecastResponse.class
-com\hiroki\weatherdashboard\dto\OpenMeteoApiResponse$Daily.class
-com\hiroki\weatherdashboard\service\OpenMeteoForecastService.class
