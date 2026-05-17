@@ -14,6 +14,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,6 +93,7 @@ public class OpenMeteoForecastService {
                 apiResponse.latitude(),
                 apiResponse.longitude(),
                 apiResponse.timezone(),
+                LocalDateTime.now().toString(),
                 days
         );
     }
