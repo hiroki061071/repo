@@ -27,20 +27,21 @@
                 <option value="38.2682,140.8694,仙台">仙台</option>
                 <option value="34.3853,132.4553,広島">広島</option>
                 <option value="35.1815,136.9066,名古屋">名古屋</option>
-                <option value="43.7706,142.3650,旭川">旭川</option>
             </select>
         </div>
 
         <div class="row split">
             <div>
-                <label for="searchKeyword">地点検索</label>
+                <label for="searchKeyword">地名検索</label>
                 <input id="searchKeyword" type="text" placeholder="例: 鹿児島, 京都, Yokohama">
             </div>
             <div class="search-button-wrap">
                 <label>&nbsp;</label>
-                <button id="searchBtn" type="button">検索候補を反映</button>
+                <button id="searchBtn" type="button">地名検索</button>
             </div>
         </div>
+
+        <div id="searchResults" class="search-results"></div>
 
         <div class="row split">
             <div><label for="lat">緯度</label><input id="lat" type="number" step="0.0001" value="37.9162"></div>
@@ -50,6 +51,15 @@
 
         <div class="row">
             <button id="loadBtn">予報を取得</button>
+            <button id="favoriteBtn" type="button">お気に入り追加</button>
+        </div>
+
+        <div class="row">
+            <label for="favoriteSelect">お気に入り</label>
+            <select id="favoriteSelect">
+                <option value="">選択してください</option>
+            </select>
+            <button id="favoriteLoadBtn" type="button">反映</button>
         </div>
     </section>
 
@@ -57,6 +67,7 @@
         <h2 id="locationTitle">新潟</h2>
         <p id="metaText">7日予報を表示します。</p>
         <p id="fetchedAtText">取得時刻: -</p>
+        <p id="apiFetchedAtText">API応答時刻: -</p>
     </section>
 
     <section class="charts">
@@ -76,7 +87,6 @@
                 <th>最低気温</th>
                 <th>降水確率</th>
                 <th>最大風速</th>
-                <th>天気コード</th>
             </tr>
             </thead>
             <tbody></tbody>
@@ -84,6 +94,6 @@
     </section>
 </div>
 
-<script src="/app.js?v=20260517_1"></script>
+<script src="/app.js?v=20260517_2"></script>
 </body>
 </html>
